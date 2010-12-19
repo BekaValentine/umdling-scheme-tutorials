@@ -215,7 +215,7 @@
                               args)))))
 
 (define (primitive? proc)
-  (member proc (list + - * / > >= < <= = odd? even? cons list car cdr null? equal? display bind)))
+  (member proc (list + - * / > >= < <= = odd? even? cons list car cdr pair? list? null? equal? display)))
 
 (define base-env
   (list (list
@@ -234,6 +234,8 @@
         (list 'list list)
         (list 'car car)
         (list 'cdr cdr)
+        (list 'pair? pair?)
+        (list 'list? list?)
         (list 'null? null?)
         (list 'equal? equal?)
         (list 'display display))))

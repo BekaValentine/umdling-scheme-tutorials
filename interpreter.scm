@@ -68,11 +68,6 @@
   (cdr exp))
 
 
-; Internal
-
-(define (error? exp)
-  (equal? 'error exp))
-
 (define (proc? exp)
   (tagged? 'proc exp))
 (define (proc-params exp)
@@ -82,6 +77,11 @@
 (define (proc-env exp)
   (cadddr exp))
 
+
+; Internal
+
+(define (error? exp)
+  (equal? 'error exp))
 
 (define (pairup vars vals)
   (if (null? vars)

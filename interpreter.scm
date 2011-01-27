@@ -1,4 +1,4 @@
-; Constructs
+; Constructs ================================================================================================
 
 (define (self-evaluating? exp)
   (or (number? exp)
@@ -78,7 +78,7 @@
   (cadddr exp))
 
 
-; Internal
+; Internal ================================================================================================
 
 (define (error? exp)
   (equal? 'error exp))
@@ -114,7 +114,7 @@
         (else (any? p (cdr xs)))))
   
 
-; Interpreter
+; Interpreter ================================================================================================
 
 (define (interp exp env)
   (cond ((self-evaluating? exp)   exp)

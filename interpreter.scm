@@ -150,9 +150,9 @@
 
 (define (interp-let exp env)
   (let ((new-vals (map (lambda (pair)
-         (list (car pair)
-               (interp (cadr pair) env)))
-                       (let-pairs exp))))
+                         (list (car pair)
+                               (interp (cadr pair) env)))
+                  (let-pairs exp))))
     (if (any? (lambda (pair) (error? (cadr pair)))
               new-vals)
         'error

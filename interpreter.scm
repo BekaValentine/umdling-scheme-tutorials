@@ -152,7 +152,7 @@
   (let ((new-vals (map (lambda (pair)
                          (list (car pair)
                                (interp (cadr pair) env)))
-                      (let-pairs exp))))
+                       (let-pairs exp))))
     (if (any? (lambda (pair) (error? (cadr pair)))
               new-vals)
         'error
